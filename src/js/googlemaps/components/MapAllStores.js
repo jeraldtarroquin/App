@@ -22,16 +22,14 @@ constructor(props){
 componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
 
   if(this.props.address && this.props.address != ''){
-    console.log('total number of addresses' + globeAddressFixtures.length)
+    //console.log('total number of addresses' + globeAddressFixtures.length)
 
     var address = this.props.address
 
     var matchesFilter = new RegExp(address, "i")
     var filteredAddress = globeAddressFixtures.filter(address => address.location.match(matchesFilter))
 
-    console.log(filteredAddress.length)
-
-
+    //console.log(filteredAddress.length)
 
     this.map = new google.maps.Map(this.refs.map, {
       center: {lat: this.state.currentLat, lng: this.state.currentLng},
@@ -111,7 +109,7 @@ if (navigator.geolocation) {
 
 
     if(useFixtures){
-      console.log('useFixtures ' + useFixtures)
+        //console.log('useFixtures ' + useFixtures)
         var fixtureLength = globeAddressFixtures.length
         var fixmarks
         for(var x = 0; x < fixtureLength; x++){
